@@ -11,3 +11,8 @@ def get_player_profile(username):
     response.raise_for_status()
     return response.json()
 
+def get_player_stats(username):
+    url = f"{CHESS_API_BASE}/player/{username}/stats"
+    response = requests.get(url, headers=headers)
+    response.raise_for_status()
+    return response.json()
